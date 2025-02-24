@@ -1,7 +1,51 @@
-# Building a Sarcasm detector using Embeddings
+#  Sarcasm Detector Using Embeddings
 
-Traditional text processing techniques often fail to capture the deeper meaning of words. While no absolute numeric encoding can fully encapsulate meaning, relative representations can be learned. 
+##  Overview
+This project focuses on **building a sarcasm detector** using **word embeddings**. The goal is to **assign numerical values** to words based on their occurrence in **sarcastic or realistic headlines**, allowing us to computationally establish sentiment.
 
-**Embeddings** provide a way to **represent words as high-dimensional vectors**, where their **directions reflect contextual relationships**. By analyzing these vectors, we can **determine the overall sentiment of a sentence based on its word composition**.
+##  How It Works
+1. **Encoding Words**  
+   - Words from **sarcastic headlines** are assigned **positive values**.
+   - Words from **realistic headlines** are assigned **negative values**.
+   
+2. **Sentiment Scoring**  
+   - Given a new sentence, we calculate a **sentiment score** by summing the values of its words.
+   - If the score is **positive**, the sentence is likely **sarcastic**.
+   - If negative, it's considered **realistic**.
 
-This project focuses on leveraging **embeddings** to **build a sarcasm detector** using the **Sarcasm dataset**. By training a model on these representations, we aim to **improve its ability to distinguish sarcastic statements from literal ones**. Additionally, visualization tools will help illustrate how words are mapped to vectors and how they contribute to classification.
+3. **Using Vectors for Context**  
+   - The model doesn’t "understand" words directly.
+   - Instead, it moves word representations based on sarcasm or realism, forming a **vector space** to determine meaning.
+
+## Repository Structure
+- `main.ipynb` - Jupyter Notebook with the implementation and explanations.
+- `data/` - Folder containing the sarcasm dataset.
+- `models/` - Saved models for sarcasm detection.
+- `requirements.txt` - Dependencies to install before running the notebook.
+
+## Getting Started
+**Install Dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+**Run the Jupyter Notebook**
+
+```bash
+jupyter notebook main.ipynb
+```
+
+## Example
+**Input** 
+```python
+"neutered male named against germany, wins statuette!"
+```
+
+**Output**
+
+```ini
+Score = 2 → Sarcastic Sentence
+```
+
+## License
+This project is open-source under the MIT License.
