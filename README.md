@@ -1,4 +1,4 @@
-#  Sarcasm Detector Using Embeddings
+#  A Sarcasm Detector Using Embeddings
 
 ##  Overview
 This project focuses on **building a sarcasm detector** using **word embeddings**. The goal is to **assign numerical values** to words based on their occurrence in **sarcastic or realistic headlines**, allowing us to computationally establish sentiment.
